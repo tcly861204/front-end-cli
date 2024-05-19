@@ -30,6 +30,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: publish
-        run: pnpm publish:cli
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

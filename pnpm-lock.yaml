@@ -4,31 +4,18 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
+dependencies:
+  commander:
+    specifier: ^12.1.0
+    version: 12.1.0
 
-  .: {}
-
-  packages/cli:
-    dependencies:
-      commander:
-        specifier: ^12.1.0
-        version: 12.1.0
-    devDependencies:
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.12.12
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-
-  packages/utils:
-    devDependencies:
-      '@types/node':
-        specifier: ^20.12.12
-        version: 20.12.12
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
+devDependencies:
+  '@types/node':
+    specifier: ^20.12.12
+    version: 20.12.12
+  typescript:
+    specifier: ^5.4.5
+    version: 5.4.5
 
 packages:
 
