@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "pnpm -F fed-cli build",
-    "publish:cli": "pnpm -F fed-cli publish"
+    "publish:cli": "pnpm -F fed-cli publish --no-git-check"
   },
   "workspaces": [
     "packages/*"
