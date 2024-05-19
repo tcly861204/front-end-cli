@@ -1,0 +1,21 @@
+{
+  "name": "fed-cli",
+  "version": "1.0.0",
+  "description": "🚀 打造前端超级脚手架集",
+  "keywords": [
+    "vite", "react", "vue", "vue3", "cli"
+  ],
+  "scripts": {
+    "build": "pnpm -F fed-cli build",
+    "publish:cli": "pnpm -F fed-cli publish"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": {
+    "name": "tcly861204",
+    "email": "tcly861204@hotmail.com",
+    "url": "https://github.com/tcly861204"
+  },
+  "license": "ISC"
+}

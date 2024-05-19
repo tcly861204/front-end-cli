@@ -1,0 +1,35 @@
+name: Node.js Package
+
+on:
+  push:
+    tags:
+      - 'v*' # Push events to matching v*
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Version
+        run: node -v
+
+      - name: Install
+        run: npm i pnpm -g && pnpm install --no-frozen-lockfile # 安装依赖
+
+      - name: Build
+        run: pnpm build # 打包
+
+      - name: Setup Node.js v20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: https://registry.npmjs.org/
+
+      - name: publish
+        run: pnpm publish:cli
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
