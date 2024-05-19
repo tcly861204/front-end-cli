@@ -22,6 +22,9 @@ jobs:
 
       - name: Build
         run: pnpm build # 打包
+      
+      - name: remove git
+        run: rm -rf .git
 
       - name: Setup Node.js v20.x
         uses: actions/setup-node@v4
@@ -30,6 +33,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: publish
-        run: pnpm publish
+        run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
