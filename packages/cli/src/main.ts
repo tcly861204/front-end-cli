@@ -19,8 +19,8 @@ program
     runCommand('npm create vite@latest')
   })
 program.command('trao')
-.description('创建trao项目')
-.action(() => {
-  runCommand('npx @tarojs/cli@latest init')
-})
+  .description('创建trao项目')
+  .action(() => {
+    runCommand('npx @tarojs/cli@latest init')
+  })
 program.parse(process.argv)
